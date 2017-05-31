@@ -12,12 +12,25 @@
 
       let s1 = Snap("#svg");
       Snap.load("mario.svg", function(f) {
+
         // select #mario layer group within svg file
         let layer0 = f.select("#mario");
 
+        const original_size = 40;
+        const hover_size = 24;
+        const animation_time = 250;
+
+        $.each(layer0.selectAll("rect").items, function() {
+          this.attr({
+            origX: this.attr('x'),
+            origY: this.attr('y'),
+            modX: parseInt(this.attr('x')) + ((original_size-hover_size)/2),
+            modY: parseInt(this.attr('y')) + ((original_size-hover_size)/2)
+          });
+        });
+
         s1.append(layer0);
       });
-
 
 
 
