@@ -31,11 +31,11 @@
 
           this.mouseover(function() {
             this.animate({
-              x: parseInt(this.attr('modX')),
+              x: 160,
               y: parseInt(this.attr('modY')),
               width: hover_size,
               height: hover_size
-            }, animation_time, mina.bounce);
+            }, animation_time, mina.elastic);
           }).mouseout(function() {
             this.stop();
             this.animate({
@@ -43,7 +43,7 @@
               y: parseInt(this.attr('origY')),
               width: original_size,
               height: original_size
-            }, animation_time*5, mina.bounce);
+            }, animation_time*5, mina.elastic);
           }).click(function() {
             alert(`clicked ${this.attr('id')}`);
           });
