@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Snap</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.2.0/snap.svg-min.js"></script>
+  </head>
+
+  <body>
+    <svg id="svg" style="height:100%; width:100%;"></svg>
+
+    <script type="application/javascript">
+
+      let s1 = Snap("#svg");
+      Snap.load("mario.svg", function(f) {
+        // select #mario layer group within svg file
+        let layer0 = f.select("#mario");
+
+        s1.append(layer0);
+      });
+
+
+
+
+    </script>
+
+  </body>
+
+</html>
