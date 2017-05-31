@@ -48,18 +48,18 @@
           });
         });
 
-        layer0.select("#pinkRect").mouseover(function() {
+        layer0.select("#pinkRect").hover(function() {
           console.log("pink rect");
           this.animate({
-            d: 'm 104.28571,208.07649 140,0 0,112.85714 -4.2,0 z',
-            transform: 'r45,100,100'
-          }, 500, mina.bounce);
+            d:
+                'm 240.10815,264.74808 a 65.896118,58.576286 0 0 1 -65.89611,58.57628 65.896118,58.576286 0 0 1 -65.89612,-58.57628 65.896118,58.576286 0 0 1 65.89612,-58.57629 65.896118,58.576286 0 0 1 65.89611,58.57629 z',
+            transform: 'r0,100,100'
+          }, 500, mina.easein);
         }).mouseout(function() {
-          this.stop();
           this.animate({
             d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z',
             transform: 'r0,100,100'
-          }, 500, mina.bounce)
+          }, 500, mina.easein)
         });
 
         s1.append(layer0);
