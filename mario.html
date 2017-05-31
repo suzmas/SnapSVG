@@ -6,7 +6,8 @@
   </head>
 
   <body>
-    <svg id="svg" style="height:100%; width:100%;"></svg>
+    <svg id="svg" style="height:500px; width:500px;"></svg>
+    <div id="iconDiv" style="height:200px; width: 200px"></div>
 
     <script type="application/javascript">
 
@@ -52,6 +53,48 @@
         s1.append(layer0);
       });
 
+      let s2 = Snap('#iconDiv');
+      Snap.load('drawing.svg', function(f) {
+        pinkRect = f.select('#pinkRect');
+        rectTop = f.select('#rectTop');
+        rectBottom = f.select('#rectBottom');
+
+        rectTop.hover(function() {
+          pinkRect.animate({d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z'}, 200, mina.easein);
+          pinkRect.animate({transform: 'r45,100,100'}, 200, mina.easein);
+        },
+          function() {
+            pinkRect.animate({d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z'}, 200, mina.easein);
+            pinkRect.animate({transform: 'r0,100,100'}, 200, mina.easein);
+            pinkRect.animate({fill: '#fff'}, 50, mina.easein)
+          });
+        rectBottom.hover(function() {
+            pinkRect.animate({d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z'}, 200, mina.easein);
+            pinkRect.animate({transform: 'r-45,100,100'}, 200, mina.easein);
+          },
+            function() {
+              pinkRect.animate({d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z'}, 200, mina.easein);
+              pinkRect.animate({transform: 'r0,100,100'}, 200, mina.easein);
+              pinkRect.animate({fill: '#fff'}, 50, mina.easein)
+            });
+          rectTop.mousedown(function() {
+            let y = $(window).scrollTop();
+            $('html, body').animate({scrollTop: y - $(window).height() }, 400);
+            pinkRect.animate({fill: '#ccc'}, 50, mina.easein);
+          });
+          rectTop.mouseup(function() {
+            pinkRect.animate({fill: '#fff'}, 50, mina.easein);
+          });
+          rectBottom.mousedown(function() {
+            let y = $(window).scrollTop();
+            $('html, body').animate({scrollTop: y - $(window).height() }, 400);
+            pinkRect.animate({fill: '#ccc'}, 50, mina.easein);
+          });
+          rectBottom.mouseup(function() {
+            pinkRect.animate({fill: '#fff'}, 50, mina.easein);
+          });
+        s2.append(f);
+      })
 
 
     </script>
