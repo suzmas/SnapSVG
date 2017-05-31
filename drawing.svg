@@ -26,8 +26,6 @@
   </metadata>
   <g
      id="layer1">
-    <g
-       id="icon">
       <rect
          style="fill:#ff6600"
          id="orangeRect"
@@ -46,7 +44,6 @@
          width="252.85715"
          id="rectBottom"
          style="fill:none" />
-    </g>
     <rect
        y="140.93364"
        x="44.285713"
