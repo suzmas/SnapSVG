@@ -51,15 +51,15 @@
         layer0.select("#pinkRect").mouseover(function() {
           console.log("pink rect");
           this.animate({
-            d: 'm 10.28571,28.07649 10,0 0,12.85714 -40,0 z',
+            d: 'm 104.28571,208.07649 140,0 0,112.85714 -4.2,0 z',
             transform: 'r45,100,100'
-          }, 200, mina.elastic);
+          }, 500, mina.bounce);
         }).mouseout(function() {
           this.stop();
           this.animate({
-            // d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z',
+            d: 'm 104.28571,208.07649 140,0 0,112.85714 -140,0 z',
             transform: 'r0,100,100'
-          }, 100, mina.bounce)
+          }, 500, mina.bounce)
         });
 
         s1.append(layer0);
